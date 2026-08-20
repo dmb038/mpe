@@ -63,27 +63,25 @@ export default function DuesPage() {
                 </Typography>
                 <Stack component="ol" spacing={1.5} sx={{ pl: 2.5, m: 0, mb: 3 }}>
                   <Typography component="li" variant="body2" color="text.secondary">
-                    Go to Membership Toolkit
+                    Click the button below
                   </Typography>
                   <Typography component="li" variant="body2" color="text.secondary">
-                    Log in, or create an account if you&apos;re new to Membership Toolkit
+                    Enter your name and email address
                   </Typography>
                   <Typography component="li" variant="body2" color="text.secondary">
-                    Go to My Account → My Forms/Paperwork (new accounts land here automatically)
+                    Enter your card information securely
                   </Typography>
                   <Typography component="li" variant="body2" color="text.secondary">
-                    Scroll to the bottom of the page for the form to pay 2026 dues
+                    Submit to complete your payment
                   </Typography>
                 </Stack>
                 <Button
                   component="a"
-                  href={footerLinks.membershipToolkit}
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/pay-dues"
                   variant="contained"
                   fullWidth
                 >
-                  Pay dues on Membership Toolkit
+                  Pay dues now
                 </Button>
                 <Box sx={{ mt: 2, pt: 2, borderTop: "1px solid", borderColor: "divider" }}>
                   <Typography variant="body2" color="text.secondary">

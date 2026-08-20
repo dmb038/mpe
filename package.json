@@ -18,6 +18,8 @@
     "@mui/x-date-pickers": "^9.11.0",
     "@simplewebauthn/browser": "^13.3.0",
     "@simplewebauthn/server": "^13.3.2",
+    "@stripe/react-stripe-js": "^6.8.1",
+    "@stripe/stripe-js": "^9.13.0",
     "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.112.3",
     "csv-parse": "^7.0.2",
@@ -28,6 +30,7 @@
     "react-hook-form": "^7.85.0",
     "resend": "^6.20.0",
     "server-only": "^0.0.1",
+    "stripe": "^22.5.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {

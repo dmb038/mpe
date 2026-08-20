@@ -9,6 +9,7 @@
 export type ResidentRole = "resident" | "board" | "admin";
 export type ResidentStatus = "unclaimed" | "pending_verification" | "active" | "disabled";
 export type FlockRequestStatus = "new" | "in_review" | "fulfilled" | "closed";
+export type PaymentStatus = "pending" | "succeeded" | "failed" | "refunded";
 
 export interface Database {
   public: {
@@ -205,6 +206,40 @@ export interface Database {
           last_used_at?: string | null;
         };
         Update: Partial<Database["public"]["Tables"]["webauthn_credentials"]["Insert"]>;
+        Relationships: [];
+      };
+      payments: {
+        Row: {
+          id: string;
+          stripe_intent_id: string;
+          amount_cents: number;
+          currency: string;
+          status: PaymentStatus;
+          payer_name: string;
+          payer_email: string;
+          payer_resident_id: string | null;
+          description: string | null;
+          metadata: Record<string, any> | null;
+          created_at: string;
+          updated_at: string;
+          succeeded_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          stripe_intent_id: string;
+          amount_cents: number;
+          currency?: string;
+          status?: PaymentStatus;
+          payer_name: string;
+          payer_email: string;
+          payer_resident_id?: string | null;
+          description?: string | null;
+          metadata?: Record<string, any> | null;
+          created_at?: string;
+          updated_at?: string;
+          succeeded_at?: string | null;
+        };
+        Update: Partial<Database["public"]["Tables"]["payments"]["Insert"]>;
         Relationships: [];
       };
     };
