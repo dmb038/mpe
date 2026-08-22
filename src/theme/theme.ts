@@ -43,6 +43,29 @@ export const theme = createTheme({
     button: { textTransform: "none", fontWeight: 600 },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        :root {
+          --color-primary: ${light.primary};
+          --color-secondary: ${light.secondary};
+          --color-tertiary: ${light.tertiary};
+          --color-background: ${light.background};
+          --color-surface: ${light.surface};
+          --color-on-background: ${light.onBackground};
+          --color-on-surface: ${light.onSurface};
+          --font-family-body: ${typeTokens.bodyFont};
+          --font-family-display: ${typeTokens.displayFont};
+        }
+
+        body {
+          font-family: var(--font-family-body);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-family: var(--font-family-display);
+        }
+      `,
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {

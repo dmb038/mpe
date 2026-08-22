@@ -21,6 +21,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import { marketingNav } from "@/lib/nav";
+import ThemeSelector from "./ThemeSelector";
 
 function DesktopNavItem({ item }: { item: (typeof marketingNav)[number] }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -145,6 +146,7 @@ export default function MarketingHeader() {
           >
             Flock Request
           </Button>
+          <ThemeSelector />
           <Button component={Link} href="/portal/login" variant="contained" sx={{ ml: 1 }}>
             Resident Portal
           </Button>
