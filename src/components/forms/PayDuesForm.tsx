@@ -49,7 +49,7 @@ function PaymentFormContent() {
       }
 
       // Confirm payment with Stripe
-      const { error: stripeError, paymentIntent } = await stripe.confirmCardPayment(result.clientSecret, {
+      const { error: stripeError, paymentIntent } = await stripe.confirmCardPayment((result as { ok: true; clientSecret: string }).clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement)!,
           billing_details: { name, email },

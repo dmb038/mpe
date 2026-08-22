@@ -6,7 +6,7 @@ import Stripe from "stripe";
 import type { ActionResult } from "./contact";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "", {
-  apiVersion: "2024-12-18.acacia",
+  apiVersion: "2026-07-29.dahlia",
 });
 
 const DUES_AMOUNT_CENTS = 12500; // $125.00

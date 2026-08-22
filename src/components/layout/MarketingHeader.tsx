@@ -103,7 +103,7 @@ function MobileNav({ open, onClose }: { open: boolean; onClose: () => void }) {
               </ListItemButton>
             )
           )}
-          <ListItemButton component={Link} href="https://merrimanparkestates.membershiptoolkit.com/" onClick={onClose} target="_blank" rel="noreferrer">
+          <ListItemButton component={Link} href="https://merrimanparkestates.membershiptoolkit.com/" onClick={onClose}>
             <ListItemText primary="Resident Portal" />
           </ListItemButton>
         </List>
@@ -145,7 +145,7 @@ export default function MarketingHeader() {
           >
             Flock Request
           </Button>
-          <Button component={Link} href="https://merrimanparkestates.membershiptoolkit.com/" variant="contained" sx={{ ml: 1 }} target="_blank" rel="noreferrer">
+          <Button component={Link} href="https://merrimanparkestates.membershiptoolkit.com/" variant="contained" sx={{ ml: 1 }}>
             Resident Portal
           </Button>
         </Box>
