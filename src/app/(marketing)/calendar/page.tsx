@@ -7,10 +7,10 @@ import CardContent from "@mui/material/CardContent";
 import Alert from "@mui/material/Alert";
 import Chip from "@mui/material/Chip";
 import Divider from "@mui/material/Divider";
+import Box from "@mui/material/Box";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import PageHero from "@/components/layout/PageHero";
 import Section from "@/components/layout/Section";
-import EmbeddedCalendar from "@/components/calendar/EmbeddedCalendar";
 import { getUpcomingEvents, type CalendarEvent } from "@/lib/calendar/googleCalendar";
 
 export const metadata: Metadata = { title: "Calendar" };
@@ -48,8 +48,14 @@ export default async function CalendarPage() {
       />
       <Section>
         <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <EmbeddedCalendar />
+          <Grid size={{ xs: 12, md: 5 }}>
+            <Box sx={{ border: "1px solid", borderColor: "divider", borderRadius: 1, overflow: "hidden", height: 500 }}>
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=merrimanparkestates%40gmail.com&ctz=America%2FChicago"
+                style={{ border: 0, width: "100%", height: "100%" }}
+                title="MPE Calendar"
+              />
+            </Box>
           </Grid>
           <Grid size={{ xs: 12, md: 8 }}>
             {!configured && (
