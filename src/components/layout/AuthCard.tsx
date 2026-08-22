@@ -20,8 +20,8 @@ export default function AuthCard({
     <Box sx={{ minHeight: "100vh", display: "flex", alignItems: "center", py: 6 }}>
       <Container maxWidth="xs">
         <Stack spacing={3} sx={{ alignItems: "center", mb: 3 }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <Image src="/images/logo.png" alt="MPE logo" width={44} height={25} />
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, width: "60%" }}>
+            <Image src="/images/logo.png" alt="MPE logo" width={44} height={25} style={{ width: "100%", height: "auto" }} />
           </Link>
         </Stack>
         <Card>
