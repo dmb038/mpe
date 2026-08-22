@@ -5,10 +5,11 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { themes } from "@/theme/themes";
+import { useThemeContext } from "@/context/ThemeContext";
 
 export default function ThemeSelector() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [currentTheme, setCurrentTheme] = React.useState("mpe");
+  const { currentTheme, setTheme } = useThemeContext();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -19,37 +20,9 @@ export default function ThemeSelector() {
   };
 
   const handleThemeChange = (themeName: string) => {
-    setCurrentTheme(themeName);
-    localStorage.setItem("mpe-theme", themeName);
-
-    const theme = themes[themeName as keyof typeof themes];
-    const style = document.getElementById("theme-selector-style") || document.createElement("style");
-    style.id = "theme-selector-style";
-    style.innerHTML = `
-      :root {
-        --color-primary: ${theme.primary};
-        --color-secondary: ${theme.secondary};
-        --color-tertiary: ${theme.tertiary};
-        --color-background: ${theme.background};
-        --color-surface: ${theme.surface};
-        --color-on-background: ${theme.onBackground};
-        --color-on-surface: ${theme.onSurface};
-        --font-family-body: ${theme.fontFamily};
-        --font-family-display: ${theme.displayFont};
-      }
-    `;
-    if (!document.getElementById("theme-selector-style")) {
-      document.head.appendChild(style);
-    }
-
+    setTheme(themeName);
     handleClose();
   };
-
-  React.useEffect(() => {
-    const savedTheme = localStorage.getItem("mpe-theme") || "mpe";
-    setCurrentTheme(savedTheme);
-    handleThemeChange(savedTheme);
-  }, []);
 
   const currentThemeData = themes[currentTheme as keyof typeof themes];
 
