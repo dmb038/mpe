@@ -84,6 +84,9 @@ export const theme = createTheme({
           paddingLeft: 20,
           paddingRight: 20,
         },
+        contained: {
+          color: "#FFFFFF",
+        },
       },
     },
     MuiCard: {

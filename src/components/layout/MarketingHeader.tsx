@@ -21,7 +21,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import { marketingNav } from "@/lib/nav";
-import ThemeSelector from "./ThemeSelector";
 
 function DesktopNavItem({ item }: { item: (typeof marketingNav)[number] }) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -104,7 +103,7 @@ function MobileNav({ open, onClose }: { open: boolean; onClose: () => void }) {
               </ListItemButton>
             )
           )}
-          <ListItemButton component={Link} href="/portal/login" onClick={onClose}>
+          <ListItemButton component={Link} href="https://merrimanparkestates.membershiptoolkit.com/" onClick={onClose} target="_blank" rel="noreferrer">
             <ListItemText primary="Resident Portal" />
           </ListItemButton>
         </List>
@@ -146,8 +145,7 @@ export default function MarketingHeader() {
           >
             Flock Request
           </Button>
-          <ThemeSelector />
-          <Button component={Link} href="/portal/login" variant="contained" sx={{ ml: 1 }}>
+          <Button component={Link} href="https://merrimanparkestates.membershiptoolkit.com/" variant="contained" sx={{ ml: 1 }} target="_blank" rel="noreferrer">
             Resident Portal
           </Button>
         </Box>

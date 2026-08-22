@@ -72,11 +72,11 @@ export default function HomePage() {
                 This just isn&apos;t a place to live&nbsp;&mdash;&nbsp;it is our home.
               </Typography>
               <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-                <ButtonLink href="/about/history" variant="contained" size="large">
-                  Our History
+                <ButtonLink href="https://merrimanparkestates.membershiptoolkit.com/packet/2863" variant="contained" size="large" target="_blank" rel="noreferrer">
+                  Dues & Membership
                 </ButtonLink>
-                <ButtonLink href="/portal/login" variant="outlined" size="large">
-                  Resident Portal
+                <ButtonLink href="https://merrimanparkestates.membershiptoolkit.com/directory" variant="outlined" size="large" target="_blank" rel="noreferrer">
+                  Directory
                 </ButtonLink>
               </Stack>
             </Grid>

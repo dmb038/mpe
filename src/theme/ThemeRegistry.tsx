@@ -2,16 +2,17 @@
 
 import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
-import { ThemeContextProvider } from "@/context/ThemeContext";
+import { theme } from "./theme";
 
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
   return (
     <AppRouterCacheProvider options={{ key: "mui" }}>
-      <ThemeContextProvider>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}
-      </ThemeContextProvider>
+      </ThemeProvider>
     </AppRouterCacheProvider>
   );
 }
