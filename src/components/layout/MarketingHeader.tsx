@@ -14,7 +14,6 @@ import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
-import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -121,16 +120,9 @@ export default function MarketingHeader() {
         <Box
           component={Link}
           href="/"
-          sx={{ display: "flex", alignItems: "center", gap: 1.5, mr: 2, flexGrow: 1 }}
+          sx={{ display: "flex", alignItems: "center", mr: 2, flexGrow: 1 }}
         >
-          <Image src="/images/logo.png" alt="MPE logo" width={40} height={23} priority />
-          <Typography
-            variant="h6"
-            component="span"
-            sx={{ fontFamily: "var(--font-display)", fontWeight: 600, display: { xs: "none", sm: "block" } }}
-          >
-            Merriman Park Estates
-          </Typography>
+          <Image src="/images/logo.png" alt="MPE logo" width={44} height={25} priority />
         </Box>
 
         <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", gap: 0.5 }}>
