@@ -34,7 +34,7 @@ const quickLinks = [
     icon: PeopleAltOutlinedIcon,
     title: "Resident Portal & Directory",
     description: "Sign in to browse the resident directory and manage your account.",
-    href: "/portal/login",
+    href: "https://merrimanparkestates.membershiptoolkit.com/",
   },
   {
     icon: VideocamOutlinedIcon,
