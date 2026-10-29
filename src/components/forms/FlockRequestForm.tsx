@@ -41,9 +41,11 @@ export default function FlockRequestForm() {
 
   async function onSubmit(data: FlockRequestInput) {
     setServerError(null);
+    setStatus("idle");
     const result = await submitFlockRequest(data);
     if (result.ok) {
       setStatus("success");
+      setNotSure(false);
       reset();
     } else {
       setStatus("error");
@@ -51,18 +53,12 @@ export default function FlockRequestForm() {
     }
   }
 
-  if (status === "success") {
-    return (
-      <Alert severity="success">
-        Request sent — the Security Taskforce will review it and follow up by email, typically
-        within 24–48 hours.
-      </Alert>
-    );
-  }
-
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Stack component="form" onSubmit={handleSubmit(onSubmit)} spacing={2.5} noValidate>
+        {status === "success" && (
+          <Alert severity="success">Your request has been submitted. Thank you!</Alert>
+        )}
         {serverError && <Alert severity="error">{serverError}</Alert>}
         <TextField
           label="Your name"
